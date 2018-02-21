@@ -1,0 +1,9 @@
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\bin\WebApplication3.dll.config
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\bin\WebApplication3.dll
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\bin\WebApplication3.pdb
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csprojResolveAssemblyReference.cache
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.csproj.CoreCompileInputs.cache
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
+C:\Users\OK\source\repos\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
