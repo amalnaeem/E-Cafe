@@ -33,7 +33,18 @@
         <asp:ListBox ID="ListBox5" runat="server" Height="108px" Width="120px" OnSelectedIndexChanged="ListBox5_SelectedIndexChanged" AutoPostBack="True"></asp:ListBox>
         <br />
         <br />
-        <asp:ListBox ID="ListBox6" runat="server" OnSelectedIndexChanged="ListBox6_SelectedIndexChanged" style="margin-left: 15px" Visible="False" Width="115px"></asp:ListBox>
+        <asp:ListBox ID="ListBox6" runat="server" OnSelectedIndexChanged="ListBox6_SelectedIndexChanged" style="margin-left: 15px" Visible="False" Width="115px" AutoPostBack="True"></asp:ListBox>
+        <asp:ListBox ID="ListBox7" runat="server" Height="27px" OnSelectedIndexChanged="ListBox7_SelectedIndexChanged" style="margin-left: 67px; margin-top: 0px" Visible="False" Width="238px"></asp:ListBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" OnRowDataBound="GridView1_RowDataBound">
+            <SelectedRowStyle BackColor="red" />
+        </asp:GridView>
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
+        <div style="margin-left: 40px">
+            <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+        </div>
         <br />
     </form>
 </body>
