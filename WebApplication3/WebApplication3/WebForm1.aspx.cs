@@ -14,17 +14,6 @@ namespace WebApplication3
     public partial class WebForm1 : System.Web.UI.Page
     {
 
-        DataTable dt = new DataTable();
-
-        private void gridVIEWData()
-        {
-            dt.Columns.Add("Item", typeof(string));
-            dt.Columns.Add("Quantity", typeof(Int32));
-            dt.Columns.Add("Price", typeof(Int32));
-            
-            
-        }
-
         protected override void OnLoad(EventArgs e)
         {
            
@@ -97,11 +86,7 @@ namespace WebApplication3
                     ListBox5.Items.Add(dr1[0].ToString());
                     //MessageBox.Show(dr1[1].ToString());
                 }
-                gridVIEWData();
-                GridView1.DataSource = dt;
-                GridView1.DataBind();
-                Session["dt"] = dt;
-           
+             
             }
         }
 
@@ -121,7 +106,7 @@ namespace WebApplication3
             ListBox4.ClearSelection();
             ListBox5.ClearSelection();
             ListBox6.Items.Clear();
-            ListBox7.Items.Clear();
+           // ListBox7.Items.Clear();
             String selection = ListBox3.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -140,8 +125,23 @@ namespace WebApplication3
                 ListBox6.Items.Add(dr1[0].ToString());
                 //MessageBox.Show(dr1[1].ToString());
             }
-
+            Label2.Text = selection;
             ListBox6.Visible = true;
+            ListBox7.Visible = true;
+            ListBox8.Visible = true;
+            ListBox9.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label9.Visible = true;
+            Label10.Visible = true;
+            TextBox2.Visible = true;
+            Button1.Visible = true;
+            Button2.Visible = true;
         }
 
         protected void ListBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -151,7 +151,7 @@ namespace WebApplication3
             ListBox4.ClearSelection();
             ListBox5.ClearSelection();
             ListBox6.Items.Clear();
-            ListBox7.Items.Clear();
+           // ListBox7.Items.Clear();
             String selection = ListBox1.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -171,13 +171,29 @@ namespace WebApplication3
                 //MessageBox.Show(dr1[1].ToString());
             }
 
+            Label2.Text = selection;
             ListBox6.Visible = true;
+            ListBox7.Visible = true;
+            ListBox8.Visible = true;
+            ListBox9.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label9.Visible = true;
+            Label10.Visible = true;
+            TextBox2.Visible = true;
+            Button1.Visible = true;
+            Button2.Visible = true;
         }
        
         protected void ListBox6_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ListBox7.Items.Clear();
-            ListBox7.Visible = true;
+            //ListBox7.Items.Clear();
+            //ListBox7.Visible = true;
             String selection = ListBox6.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -195,11 +211,11 @@ namespace WebApplication3
             while (dr1.Read())
             {
                 //MessageBox.Show(dr1[0].ToString());
-                ListBox7.Items.Add(dr1[0].ToString());
-
+                //ListBox7.Items.Add(dr1[0].ToString());
+                Label3.Text = dr1[0].ToString();
             }
-
-
+            var o = 1;
+            TextBox2.Text = o.ToString();
 
         }
        
@@ -210,7 +226,7 @@ namespace WebApplication3
             ListBox4.ClearSelection();
             ListBox5.ClearSelection();
             ListBox6.Items.Clear();
-            ListBox7.Items.Clear();
+           // ListBox7.Items.Clear();
             String selection = ListBox2.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -229,8 +245,23 @@ namespace WebApplication3
                 ListBox6.Items.Add(dr1[0].ToString());
                 //MessageBox.Show(dr1[1].ToString());
             }
-
+            Label2.Text = selection;
             ListBox6.Visible = true;
+            ListBox7.Visible = true;
+            ListBox8.Visible = true;
+            ListBox9.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label9.Visible = true;
+            Label10.Visible = true;
+            TextBox2.Visible = true;
+            Button1.Visible = true;
+            Button2.Visible = true;
         }
 
         protected void ListBox4_SelectedIndexChanged(object sender, EventArgs e)
@@ -240,7 +271,7 @@ namespace WebApplication3
             ListBox3.ClearSelection();
             ListBox5.ClearSelection();
             ListBox6.Items.Clear();
-            ListBox7.Items.Clear();
+            
             String selection = ListBox4.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -259,8 +290,24 @@ namespace WebApplication3
                 ListBox6.Items.Add(dr1[0].ToString());
                 //MessageBox.Show(dr1[1].ToString());
             }
+            Label2.Text = selection;
 
             ListBox6.Visible = true;
+            ListBox7.Visible = true;
+            ListBox8.Visible = true;
+            ListBox9.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label9.Visible = true;
+            Label10.Visible = true;
+            TextBox2.Visible = true;
+            Button1.Visible = true;
+            Button2.Visible = true;
         }
 
         protected void ListBox5_SelectedIndexChanged(object sender, EventArgs e)
@@ -270,7 +317,7 @@ namespace WebApplication3
             ListBox4.ClearSelection();
             ListBox3.ClearSelection();
             ListBox6.Items.Clear();
-            ListBox7.Items.Clear();
+           // ListBox7.Items.Clear();
             String selection = ListBox5.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
@@ -289,8 +336,23 @@ namespace WebApplication3
                 ListBox6.Items.Add(dr1[0].ToString());
                 //MessageBox.Show(dr1[1].ToString());
             }
-
+            Label2.Text = selection;
             ListBox6.Visible = true;
+            ListBox7.Visible = true;
+            ListBox8.Visible = true;
+            ListBox9.Visible = true;
+            Label1.Visible = true;
+            Label2.Visible = true;
+            Label3.Visible = true;
+            Label5.Visible = true;
+            Label6.Visible = true;
+            Label7.Visible = true;
+            Label8.Visible = true;
+            Label9.Visible = true;
+            Label10.Visible = true;
+            TextBox2.Visible = true;
+            Button1.Visible = true;
+            Button2.Visible = true;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -308,33 +370,10 @@ namespace WebApplication3
 
         }
 
-        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
-        {
-
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                // Set the hand mouse cursor for the selected row.
-                e.Row.Attributes.Add("OnMouseOver", "this.style.cursor = 'hand';");
-
-                // The seelctButton exists for ensuring the selection functionality
-                // and bind it with the appropriate event hanlder.
-                LinkButton selectButton = new LinkButton()
-                {
-                    CommandName = "Select",
-                    Text = e.Row.Cells[0].Text
-                };
-                selectButton.Font.Underline = false;
-                selectButton.ForeColor = Color.Black;
-
-                e.Row.Cells[0].Controls.Add(selectButton);
-                //e.Row.Attributes["OnClick"] =
-                //     Page.ClientScript.GetPostBackClientHyperlink(selectButton, "");
-                e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.GridView1, "Select$" + e.Row.RowIndex);
-            }
-        }
+     
+        static int x = 0;
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (Session["dt"] != null) dt = (DataTable)Session["dt"];
             //Int32 p = Convert.ToInt32(ListBox7.Text) * Convert.ToInt32(txt_price.Text);
 
             String selection = ListBox6.SelectedItem.Text;
@@ -353,25 +392,48 @@ namespace WebApplication3
            // MessageBox.Show(dr1.GetString(0));
             while (dr1.Read())
             {
-                MessageBox.Show(dr1[0].ToString());
+               // MessageBox.Show(dr1[0].ToString());
                 p = dr1[0].ToString();
                 //ListBox7.Items.Add(dr1[0].ToString());
 
             }
-
-            DataRow dr = dt.NewRow();
-           
-            dr["Item"] = ListBox6.SelectedItem.Text;
-            dr["Price"] = p;
-            dr["Quantity"] = TextBox2.Text;
             
-            dt.Rows.Add(dr);
+            var ip= Convert.ToInt32(p);
+            var q = 1;
+            q=Convert.ToInt32(TextBox2.Text); 
+                        
+            var qpr = ip * q;
+            x += qpr;
+            ListBox7.Items.Add(ListBox6.SelectedItem.Text);
+            ListBox8.Items.Add(TextBox2.Text);
+            ListBox9.Items.Add(qpr.ToString());
 
-            GridView1.DataSource = dt;
-            GridView1.DataBind();
+            Label1.Text = x.ToString();
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+            int r = ListBox7.SelectedIndex;
+            ListBox7.Items.RemoveAt(r);
+            ListBox8.Items.RemoveAt(r);
+            int p = Convert.ToInt32(ListBox9.Items[r].Text);
+            ListBox9.Items.RemoveAt(r);
+            x -= p;
+            Label1.Text = x.ToString();
+            ListBox6.ClearSelection();
+        }
+
+        protected void ListBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
