@@ -34,7 +34,7 @@ namespace WebApplication3
                 string addr = TextBox4.Text;
                 System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
                 conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-            @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
+            @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
                 conn.Open();
 
                 String sql = "insert into Users ([Firstname], [Lastname], [Username], [Password],[Type],[Address],[PhoneNo]) values ('" + fname + "','" + lname + "','" + uname + "','" + pass + "','Customer','"+ph+"','"+addr+"')";
