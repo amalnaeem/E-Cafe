@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace WebApplication3
 {
@@ -28,7 +29,7 @@ namespace WebApplication3
 
                 conn.Open();
 
-                String my_querry1 = "select ID from Orders where OrderType = 'Delivery'";
+                String my_querry1 = "select ID from Orders where  Status = 'Incomplete'";
                 OleDbCommand cmd1 = new OleDbCommand(my_querry1, conn);
 
                 var dr1 = cmd1.ExecuteReader();
@@ -45,6 +46,33 @@ namespace WebApplication3
 
                 protected void CheckBoxList1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            List<ListItem> toBeRemoved = new List<ListItem>();
+            foreach (ListItem item in CheckBoxList1.Items)
+            {
+                if (item.Selected)
+                {
+                    toBeRemoved.Add(item);
+                    System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
+                    conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
+                @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+
+                    conn.Open();
+                    var st = item.Text;
+                    MessageBox.Show(st);
+                    String my_querry1 = "UPDATE Orders SET Status = 'Complete' where ID = '"+item.Text+"' ";
+                    OleDbCommand cmd1 = new OleDbCommand(my_querry1, conn);
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            for (int i = 0; i < toBeRemoved.Count; i++)
+            {
+                CheckBoxList1.Items.Remove(toBeRemoved[i]);
+            }
 
         }
     }
