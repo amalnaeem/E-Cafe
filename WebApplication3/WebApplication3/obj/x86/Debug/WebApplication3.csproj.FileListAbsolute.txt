@@ -1,0 +1,8 @@
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\bin\WebApplication3.dll.config
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\bin\WebApplication3.dll
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\bin\WebApplication3.pdb
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\obj\x86\Debug\WebApplication3.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\obj\x86\Debug\WebApplication3.dll
+C:\Users\Dell\Documents\GitHub\E-Cafe\WebApplication3\WebApplication3\obj\x86\Debug\WebApplication3.pdb

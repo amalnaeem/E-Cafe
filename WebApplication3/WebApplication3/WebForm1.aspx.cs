@@ -24,7 +24,7 @@ namespace WebApplication3
 
                 System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
                 conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-            @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+            @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
                 conn.Open();
 
@@ -110,7 +110,7 @@ namespace WebApplication3
             String selection = ListBox3.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -155,7 +155,7 @@ namespace WebApplication3
             String selection = ListBox1.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -197,7 +197,7 @@ namespace WebApplication3
             String selection = ListBox6.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -230,7 +230,7 @@ namespace WebApplication3
             String selection = ListBox2.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -275,7 +275,7 @@ namespace WebApplication3
             String selection = ListBox4.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -321,7 +321,7 @@ namespace WebApplication3
             String selection = ListBox5.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -379,7 +379,7 @@ namespace WebApplication3
             String selection = ListBox6.SelectedItem.Text;
             System.Data.OleDb.OleDbConnection conn = new System.Data.OleDb.OleDbConnection();
             conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;" +
-        @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
+        @"Data source= C:\Users\Dell\Documents\Ecafe.accdb";
 
             conn.Open();
 
@@ -436,6 +436,63 @@ namespace WebApplication3
         protected void ListBox8_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            string[] item = new string[ListBox7.Items.Count];
+            string[] quant = new string[ListBox8.Items.Count];
+            string[] price = new string[ListBox9.Items.Count];
+            // place all your values into that string array.
+           
+            for (int i = 0; i < ListBox7.Items.Count; ++i)
+            {
+                item[i] = ListBox7.Items[i].Value;
+
+            }
+            Session["items"] = item;
+
+            for (int i = 0; i < ListBox8.Items.Count; ++i)
+            {
+                quant[i] = ListBox8.Items[i].Value;
+            }
+            Session["quants"] = quant;
+
+            for (int i = 0; i < ListBox9.Items.Count; ++i)
+            {
+                price[i] = ListBox9.Items[i].Value;
+            }
+            Session["prices"] = price;
+
+            Response.Redirect("Login.aspx");
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string[] item = new string[ListBox7.Items.Count ];
+            string[] quant = new string[ListBox8.Items.Count];
+            string[] price = new string[ListBox9.Items.Count];
+            // place all your values into that string array.
+            //Server.Transfer("Login.aspx");
+            for (int i = 0; i < ListBox7.Items.Count; ++i)
+            {
+                    item[i] = ListBox7.Items[i].Value;
+               
+            }
+            Session["items"] = item;
+
+            for (int i = 0; i < ListBox8.Items.Count; ++i)
+            {
+                quant[i] = ListBox8.Items[i].Value;
+            }
+            Session["quants"] = quant;
+
+            for (int i = 0; i < ListBox9.Items.Count; ++i)
+            {
+                price[i] = ListBox9.Items[i].Value;
+            }
+            Session["prices"] = price;
+            Response.Redirect("Login.aspx");
         }
     }
 }
