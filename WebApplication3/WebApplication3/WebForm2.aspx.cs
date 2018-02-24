@@ -29,7 +29,7 @@ namespace WebApplication3
 
                 conn.Open();
 
-                String my_querry1 = "select ID from Orders where  Status = 'Incomplete'";
+                String my_querry1 = "select DISTINCT OrderID from Orders where  Status = 'Incomplete'";
                 OleDbCommand cmd1 = new OleDbCommand(my_querry1, conn);
 
                 var dr1 = cmd1.ExecuteReader();
@@ -62,9 +62,10 @@ namespace WebApplication3
                 @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
 
                     conn.Open();
-                    var st = item.Text;
-                    MessageBox.Show(st);
-                    String my_querry1 = "UPDATE Orders SET Status = 'Complete' where ID = '"+item.Text+"' ";
+                    string st = item.Text;
+                    
+                   // Int32 id = Int32.Parse(item.Text);
+                    String my_querry1 = "UPDATE Orders SET Status = 'Complete' where OrderID = "+Convert.ToInt32(st)+"";
                     OleDbCommand cmd1 = new OleDbCommand(my_querry1, conn);
                     cmd1.ExecuteNonQuery();
                 }

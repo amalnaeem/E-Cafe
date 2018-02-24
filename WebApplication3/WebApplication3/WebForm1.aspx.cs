@@ -409,6 +409,8 @@ namespace WebApplication3
             ListBox9.Items.Add(qpr.ToString());
 
             Label1.Text = x.ToString();
+            Label11.Visible = true;
+            TextBox3.Visible = true;
         }
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
@@ -440,6 +442,10 @@ namespace WebApplication3
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+
+            
+            string ptime = TextBox3.Text;
+            Session["picktime"] = ptime;
             string[] item = new string[ListBox7.Items.Count];
             string[] quant = new string[ListBox8.Items.Count];
             string[] price = new string[ListBox9.Items.Count];
@@ -463,8 +469,9 @@ namespace WebApplication3
                 price[i] = ListBox9.Items[i].Value;
             }
             Session["prices"] = price;
-
-            Response.Redirect("Login.aspx");
+            
+                Response.Redirect("Login.aspx");
+            
         }
 
         protected void Button4_Click(object sender, EventArgs e)
@@ -492,7 +499,13 @@ namespace WebApplication3
                 price[i] = ListBox9.Items[i].Value;
             }
             Session["prices"] = price;
+            
             Response.Redirect("Login.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("WebForm4.aspx");
         }
     }
 }

@@ -37,7 +37,7 @@ namespace WebApplication3
             @"Data source= C:\Users\OK\Documents\Ecafe.accdb";
                 conn.Open();
 
-                String sql = "insert into Users ([Firstname], [Lastname], [Username], [Password],[Type],[Address],[PhoneNo]) values ('" + fname + "','" + lname + "','" + uname + "','" + pass + "','Customer','"+ph+"','"+addr+"')";
+                String sql = "insert into Users ([Firstname], [Lastname], [Username], [Password],[Type],[Address],[PhoneNo]) values ('" + fname + "','" + lname + "','" + uname + "','" + pass + "','Customer','"+addr+"','"+ Convert.ToInt64(ph) + "')";
                 System.Data.OleDb.OleDbCommand cmd1 = new System.Data.OleDb.OleDbCommand(sql, conn);
 
                 var dr1 = cmd1.ExecuteNonQuery();
