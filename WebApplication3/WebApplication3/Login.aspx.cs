@@ -61,20 +61,33 @@ namespace WebApplication3
 
                 //cmd = new OleDbCommand("SELECT @@IDENTITY", con);
                 //id = cmd.ExecuteNonQuery();
-               // String my_quer2 = "select OrderID from Orders";
-                //System.Data.OleDb.OleDbCommand cmd2 = new System.Data.OleDb.OleDbCommand(my_quer2 , conn);
-                System.Data.OleDb.OleDbCommand cmd2 = new System.Data.OleDb.OleDbCommand("SELECT @@IDENTITY", conn);
+               String my_quer2 = "select * from Orders";
+                String mq = "SELECT COUNT(*) FROM Orders";
+                System.Data.OleDb.OleDbCommand cmd2 = new System.Data.OleDb.OleDbCommand(my_quer2 , conn);
+                System.Data.OleDb.OleDbCommand cmd6 = new System.Data.OleDb.OleDbCommand(mq, conn);
                 var dr2 = cmd2.ExecuteReader();
+                int f = (int)cmd6.ExecuteScalar();
                 var oid = "a"; //order id
+                Int32 y = 0;
+                var g = 1;
+                MessageBox.Show(f.ToString());
+                if (dr2.Read() == false) { oid = "0"; }
                 while (dr2.Read())
                 {
-                    oid = dr2[0].ToString();
+                    y = Convert.ToInt32(dr2[11]);
+                    MessageBox.Show(y.ToString());
+                    g++;
+                    //if((g-1)==f)
+                    //break;
                 }
-
-                Int32 ooid = Convert.ToInt32(oid);
-                ooid += 1;
-                MessageBox.Show(oid.ToString());
+                MessageBox.Show(f.ToString());
+               
+                Int32 ooid = y + 1;
+                //Int32 ooid = Convert.ToInt32(oid);
+                //ooid += 1;
+               // MessageBox.Show(oid.ToString());
                 MessageBox.Show(ooid.ToString());
+                
                 DateTime currentTime = DateTime.Now;
                 DateTime x30MinsLater = currentTime.AddMinutes(30);
                // string pt = ptime.ToString("hh:mm tt");
@@ -91,12 +104,13 @@ namespace WebApplication3
                     cmd3.Parameters.AddWithValue("@x1", i[j]);
                     var dr3 = cmd3.ExecuteReader();
                     var iid = "a"; //item id
+
                     while (dr3.Read())
                     {
                         iid = dr3[0].ToString();
                     }
-                    MessageBox.Show(ptime);
-                    if (ptime == null)
+                   // MessageBox.Show(ptime);
+                    if (string.IsNullOrWhiteSpace(ptime))
                     {
                         MessageBox.Show("hello");
                         String sql = "insert into Orders ([OrderID],[UserID],[OrderType],[Status],[ItemID],[OrderDate],[TotalBill],[Address],[CustomerNumber],[Quantity],[DTime]) values ('" + ooid + "','" + uid + "','Delivery','Incomplete','" + iid + "','" + current_date + "','" + total + "','" + ua + "','" + up + "','" + q[j] + "','" + dtime + "')";
