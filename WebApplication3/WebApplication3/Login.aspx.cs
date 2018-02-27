@@ -70,7 +70,7 @@ namespace WebApplication3
                 var oid = "a"; //order id
                 Int32 y = 0;
                 var g = 1;
-                MessageBox.Show(f.ToString());
+                //MessageBox.Show(f.ToString());
                 if (dr2.Read() == false) { oid = "0"; }
                 while (dr2.Read())
                 {
@@ -80,13 +80,13 @@ namespace WebApplication3
                     //if((g-1)==f)
                     //break;
                 }
-                MessageBox.Show(f.ToString());
+               // MessageBox.Show(f.ToString());
                
                 Int32 ooid = y + 1;
                 //Int32 ooid = Convert.ToInt32(oid);
                 //ooid += 1;
                // MessageBox.Show(oid.ToString());
-                MessageBox.Show(ooid.ToString());
+                //MessageBox.Show(ooid.ToString());
                 
                 DateTime currentTime = DateTime.Now;
                 DateTime x30MinsLater = currentTime.AddMinutes(30);
@@ -112,7 +112,7 @@ namespace WebApplication3
                    // MessageBox.Show(ptime);
                     if (string.IsNullOrWhiteSpace(ptime))
                     {
-                        MessageBox.Show("hello");
+                       // MessageBox.Show("hello");
                         String sql = "insert into Orders ([OrderID],[UserID],[OrderType],[Status],[ItemID],[OrderDate],[TotalBill],[Address],[CustomerNumber],[Quantity],[DTime]) values ('" + ooid + "','" + uid + "','Delivery','Incomplete','" + iid + "','" + current_date + "','" + total + "','" + ua + "','" + up + "','" + q[j] + "','" + dtime + "')";
                         System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(sql, conn);
                         var dr4 = cmd.ExecuteNonQuery();
@@ -123,17 +123,18 @@ namespace WebApplication3
                     {
                         DateTime pitime = DateTime.Parse(ptime, System.Globalization.CultureInfo.CurrentCulture);
                         DateTime PTime = DateTime.ParseExact(ptime, "HH:mm", CultureInfo.InvariantCulture);
-                        MessageBox.Show(ptime);
+                        //MessageBox.Show(ptime);
                         String sql = "insert into Orders ([OrderID],[UserID],[OrderType],[Status],[ItemID],[OrderDate],[TotalBill],[Address],[CustomerNumber],[Quantity],[PTime]) values ('" + ooid + "','" + uid + "','Pickup','Incomplete','" + iid + "','" + current_date + "','" + total + "','" + ua + "','" + up + "','" + q[j] + "','" + PTime + "')";
                         System.Data.OleDb.OleDbCommand cmd = new System.Data.OleDb.OleDbCommand(sql, conn);
                         var dr4 = cmd.ExecuteNonQuery();
                         MessageBox.Show("Your Order Has been Placed. Please pick it up around " + PTime.ToString("HH:mm "));
 
                     }
+                    Server.Transfer("WebForm1.aspx");
                 }
 
 
-                MessageBox.Show("Your Order Has been Placed and it will be delivered around "+ dtime.ToString("hh:mm tt"));
+// MessageBox.Show("Your Order Has been Placed and it will be delivered around "+ dtime.ToString("hh:mm tt"));
 
             }
             else

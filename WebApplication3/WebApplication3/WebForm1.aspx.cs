@@ -507,5 +507,10 @@ namespace WebApplication3
         {
             Server.Transfer("WebForm4.aspx");
         }
+
+        protected void LinkButton2_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("WebForm6.aspx");
+        }
     }
 }
